@@ -1,0 +1,129 @@
+﻿@model WannaSwapWebRole.Models.Advert
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<!-- The code belew in normal HTML would be: <form action="" method="post" enctype="multipart/form-data">
+    However, here I am using Razor code (hence the 'at sign'). Instructions fromm:
+    http://stackoverflow.com/questions/8356506/how-to-write-html-beginform-in-razor -->
+@using (Html.BeginForm("Create", "Advert", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <!-- most of the code below I generated through the ASP.NET scaffolding-->
+ 
+    
+    <div class="form-horizontal">
+        <h4>Advert</h4>
+        <hr />
+        <!--The HTML ValidationSummary Helper allows me to display summary 
+            of all validation errors. This displayed at the top of the page
+            (scaffolding generated)-->
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Caption, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Caption, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Caption, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rent, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Rent, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Rent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Location, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Age, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Noise, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Noise, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Noise, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tidy, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Tidy, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Tidy, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Babel, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.Babel, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Babel, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.State, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!--This code is not scaffolding gernated-->
+        <div class="form-group">
+            <!--here label has bootstrap responsive columns (width = 2 out of 12)
+                more ont eh label tag: http://www.w3schools.com/tags/tag_label.asp
+                'for' is used to bind the label to 'input' -->
+            <label class =" control-label col-md-2" for="imgFile">Image</label>
+            <!--bootstrap responsive columns (width = 10 out of 12)-->
+            <div class="col-md-10">
+                <!-- To validate and upload an image file using the 'accept' attribute: http://www.quackit.com/html_5/tags/html_input_tag.cfm -->
+                <input type="file" name="imgFile" accept="image/*" class="form-control fileupload" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<!--This is the Javascript that is used for client side validation (included through scaffolding)-->
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

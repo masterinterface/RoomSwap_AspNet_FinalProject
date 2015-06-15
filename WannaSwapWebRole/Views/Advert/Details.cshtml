@@ -1,0 +1,115 @@
+﻿@model WannaSwapWebRole.Models.Advert
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Advert</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Caption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Caption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Noise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Noise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tidy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tidy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Babel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Babel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImgURL)
+        </dt>
+
+        <dd>
+            <!-- here I have a simple img tag with a ASP.NET HTML Helper that outputs the URL of the image within the src attribute.-->
+            <img src = "@Html.Raw(Model.ImgURL)" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

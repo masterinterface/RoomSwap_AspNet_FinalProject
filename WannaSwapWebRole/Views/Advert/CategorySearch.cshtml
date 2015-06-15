@@ -1,0 +1,48 @@
+﻿@using WannaSwapWebRole.Models;
+@{
+    ViewBag.Title = "CategorySearch";
+}
+<br />
+<h2>Category Search</h2>
+<br />
+<h3>Use this page to narrow down the list of rooms by category</h3>
+<br /><br />
+<p> Please pick a category (one maximum!)</p>
+<br />
+<h4>Room Location</h4>
+<ul>
+    <li> @Html.ActionLink("City Center", "Index", "Advert", new {location = (int)Location.Center }, null)  </li>
+    <li> @Html.ActionLink("Outskirts", "Index", "Advert", new {location= (int)Location.Suburb }, null) </li>
+</ul>
+<br />
+<h4>Age of housemates</h4>
+<ul>
+    <li> @Html.ActionLink("Younger", "Index", "Advert", new { age = (int)Age.Young }, null)  </li>
+    <li> @Html.ActionLink("Older", "Index", "Advert", new { age = (int)Age.Old }, null) </li>
+</ul>
+<br />
+<h4>Sociability of housemates</h4>
+<ul>
+    <li> @Html.ActionLink("Quiet", "Index", "Advert", new { noise = (int)Noise.Social }, null) </li>
+    <li> @Html.ActionLink("Social", "Index", "Advert", new {noise= (int)Noise.Quiet }) </li>
+</ul>
+<br />
+<h4>General tidiness</h4>
+<ul>
+    <li> @Html.ActionLink("Clean", "Index", "Advert", new { tidy = (int)Tidy.Clean }, null)  </li>
+    <li> @Html.ActionLink("Relaxed", "Index", "Advert", new { tidy = (int)Tidy.Relaxed }, null) </li>
+</ul>
+<br />
+<h4>Languages spoken by housemates</h4>
+<ul>
+    <li> @Html.ActionLink("Many Languages!", "Index", "Advert", new { babel = (int)Babel.Language }, null)  </li>
+    <li> @Html.ActionLink("Just English", "Index", "Advert", new { babel = (int)Babel.Normal }, null) </li>
+</ul>
+<br />
+<h4>Presence of housemates</h4>
+<ul>
+    <li> @Html.ActionLink("Out & about!", "Index", "Advert", new { state = (int)State.Active }, null) </li>
+    <li> @Html.ActionLink("Home lovers", "Index", "Advert", new { state = (int)State.HomeLovers }, null) </li>
+</ul>
+
+<br /><br />
